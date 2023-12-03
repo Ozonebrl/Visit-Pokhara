@@ -43,6 +43,32 @@
           <a href="#slide-6"></a>
         </div>
       </div>
+      <script>
+        // Add JavaScript code for slider functionality here
+        let currentSlide = 0;
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function showSlide(index) {
+            const imageContainer = document.querySelector('.image-container');
+            const slideWidth = document.querySelector('.slide').offsetWidth;
+            const newPosition = -index * slideWidth;
+            imageContainer.style.transform = `translateX(${newPosition}px)`;
+            currentSlide = index;
+        }
+
+        document.querySelector('.buttons').addEventListener('click', function (event) {
+            if (event.target.tagName === 'A') {
+                const index = parseInt(event.target.getAttribute('href').substring(1), 10) - 1;
+                showSlide(index);
+            }
+        });
+
+        // Auto slide
+        setInterval(function () {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }, 3000); // Adjust the interval as needed
+    </script>
    
    
     
