@@ -43,9 +43,8 @@ body{
   li:last-child a{
     border-right: none;
   }
+/*css for slider */
 
-  /* Css for slider */
-  
       .slider {
         width: 500px;
         height: 300px;
@@ -57,7 +56,7 @@ body{
         overflow: hidden;
       }
       .image-container {
-        width: 2500px;
+        width: 1500px;
         background-color: pink;
         height: 300px;
         clear: both;
@@ -72,7 +71,6 @@ body{
         margin: 0px;
         padding: 0px;
         position: relative;
-        
       }
       #slide-1:target ~ .image-container {
         left: 0px;
@@ -82,15 +80,6 @@ body{
       }
       #slide-3:target ~ .image-container {
         left: -1000px;
-      }
-      #slide-4:target ~ .image-container {
-        left: -1500px;
-      }
-      #slide-5:target ~ .image-container {
-        left: -2000px;
-      }
-      #slide-6:target ~ .image-container {
-        left: -2500px;
       }
       .buttons {
         position: relative;
@@ -103,4 +92,11 @@ body{
         border-radius: 50px;
         background-color: lightgreen;
       }
-   
+    
+
+
+
+
+  
+
+  
