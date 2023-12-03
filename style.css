@@ -1,0 +1,45 @@
+
+ul
+{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background-color: #333;
+   
+}
+ nav li a{
+   
+    color: white;
+    display: block;
+    padding: 14px 16px;
+    border-right: 2px solid;
+    text-align: center;
+    text-decoration:silver;
+    
+   
+  
+}
+nav li{
+    float: left;
+}
+
+
+  nav a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white; /* Set the text color as needed */
+}
+body{
+    background-color: aquamarine;
+}
+.active {
+    background-color: #6be342;
+  }
+  li{
+    border-right: 1px solid;
+  }
+  li:last-child a{
+    border-right: none;
+  }
