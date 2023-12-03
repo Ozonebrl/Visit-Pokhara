@@ -18,57 +18,16 @@
   
 </head>
 <body>
-    <div class="slider">
-        <span id="slide-1"></span>
-        <span id="slide-2"></span>
-        <span id="slide-3"></span>
-        <span id="slide-4"></span>
-        <span id="slide-5"></span>
-        <span id="slide-6"></span>
-        
-        <div class="image-container">
-          <img src="Photos/boats ant phewa lake.jpg" class="slide" width="500" height="300" />
-          <img src="Photos/Devis_Falls,_Pokhara.jpg" class="slide" width="500" height="300" />
-          <img src="Photos/Machhapuchre shadow at fhewa lake.jpg" class="slide" width="500" height="300" />
-          <img src="Photos/kahu-dharara.jpg" class="slide" width="500" height="300" />
-          <img src="Photos/Pumdikot-Pokhara.jpg" class="slide" width="500" height="300" />
-          <img src="Photos/peace Pagoda.jpg" class="slide" width="500" height="300" />
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="Photos/boats ant phewa lake.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="Photos/Devis_Falls,_Pokhara.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="Photos/kahu-dharara.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="Photos/Machhapuchre shadow at fhewa lake.jpg" alt="Image 4"></div>
+            <div class="slide"><img src="Photos/peace Pagoda.jpg" alt="Image 5"></div>
+            <div class="slide"><img src="Photos/Pumdikot-Pokhara.jpg" alt="Image 6"></div>
         </div>
-        <div class="buttons">
-          <a href="#slide-1"></a>
-          <a href="#slide-2"></a>
-          <a href="#slide-3"></a>
-          <a href="#slide-4"></a>
-          <a href="#slide-5"></a>
-          <a href="#slide-6"></a>
-        </div>
-      </div>
-      <script>
-        // Add JavaScript code for slider functionality here
-        let currentSlide = 0;
-        const totalSlides = document.querySelectorAll('.slide').length;
-
-        function showSlide(index) {
-            const imageContainer = document.querySelector('.image-container');
-            const slideWidth = document.querySelector('.slide').offsetWidth;
-            const newPosition = -index * slideWidth;
-            imageContainer.style.transform = `translateX(${newPosition}px)`;
-            currentSlide = index;
-        }
-
-        document.querySelector('.buttons').addEventListener('click', function (event) {
-            if (event.target.tagName === 'A') {
-                const index = parseInt(event.target.getAttribute('href').substring(1), 10) - 1;
-                showSlide(index);
-            }
-        });
-
-        // Auto slide
-        setInterval(function () {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }, 3000); // Adjust the interval as needed
-    </script>
+    </div>
    
    
     
