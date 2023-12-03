@@ -24,5 +24,4 @@ function prevSlide() {
     showSlide(currentIndex - 1);
 }
 
-// Automatic slide change (uncomment to enable)
-// setInterval(nextSlide, 3000);
+setInterval(nextSlide, 1000);
