@@ -1,27 +1,23 @@
-let currentIndex = 0;
-const slider = document.querySelector('.slider');
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
+document.addEventListener("DOMContentLoaded", function () {
+    // Set the initial slide index
+    let currentSlide = 1;
 
-function showSlide(index) {
-    if (index < 0) {
-        currentIndex = totalSlides - 1;
-    } else if (index >= totalSlides) {
-        currentIndex = 0;
-    } else {
-        currentIndex = index;
+    // Function to show the next slide
+    function showNextSlide() {
+        currentSlide = (currentSlide % 6) + 1; // number after percentage must be the no. of slides
+        location.hash = "#slide-" + currentSlide;
     }
 
-    const translateValue = -currentIndex * 100 + '%';
-    slider.style.transform = `translateX(${translateValue})`;
-}
+    // Set an interval to call the showNextSlide function every 2 seconds
+    let intervalId = setInterval(showNextSlide, 5000);
 
-function nextSlide() {
-    showSlide(currentIndex + 1);
-}
+    // Stop the interval when the user interacts with the slider
+    document.querySelector('.slider').addEventListener('mouseenter', function () {
+        clearInterval(intervalId);
+    });
 
-function prevSlide() {
-    showSlide(currentIndex - 1);
-}
-
-setInterval(nextSlide, 1000);
+    // Restart the interval when the user leaves the slider
+    document.querySelector('.slider').addEventListener('mouseleave', function () {
+        intervalId = setInterval(showNextSlide, 5000);
+    });
+});
