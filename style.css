@@ -45,47 +45,59 @@ body{
   }
 /*css for slider */
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.slider-container {
-  width: 80%;
-  margin: auto;
+.slider {
+  width: 500px;
+  height: 300px;
+  background-color: yellow;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  text-align: center;
   overflow: hidden;
 }
-
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
+.image-container {
+  width: 3000px;
+  background-color: pink;
+  height: 300px;
+  clear: both;
+  position: relative;
+  -webkit-transition: left 2s;
+  -moz-transition: left 2s;
+  -o-transition: left 2s;
+  transition: left 2s;
 }
-
 .slide {
-  min-width: 100%;
-  box-sizing: border-box;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
 }
-
-img {
-  width: 100%;
-  height: auto;
+#slide-1:target ~ .image-container {
+  left: 0px;
 }
-      .buttons {
-        position: relative;
-        top: -20px;
-      }
-      .buttons a {
-        display: inline-block;
-        height: 15px;
-        width: 15px;
-        border-radius: 50px;
-        background-color: lightgreen;
-      }
-    
-
-
-
-
-  
-
-  
+#slide-2:target ~ .image-container {
+  left: -500px;
+}
+#slide-3:target ~ .image-container {
+  left: -1000px;
+}
+  #slide-4:target ~ .image-container {
+    left: -1500px;
+}
+#slide-5:target ~ .image-container {
+  left: -2000px;
+}
+#slide-6:target ~ .image-container {
+  left: -2500px;
+}
+.buttons {
+  position: relative;
+  top: -25px;
+}
+.buttons a {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background-color: rgb(182, 6, 6);
+}
