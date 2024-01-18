@@ -12,8 +12,65 @@
                 <li style="float:right"><a href="accomodation.html">Accomodation</a></li>
             </nav>
     </ul>
+    <style>
+        .picture-box {
+          width: 200px;
+          height: 200px;
+          border: 1px solid #ccc;
+          overflow: hidden;
+          cursor: pointer;
+          position: relative;
+          
+          border-color: rgb(213, 130, 22);
+        }
+    
+        .picture {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+    
+        .description {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
+    
+        .picture-box:hover .picture {
+          transform: scale(1.2);
+        }
+    
+        .picture-box:hover .description {
+          opacity: 1;
+        }
+      </style>
 </head>
 <body>
+    <div class="picture-box" onclick="toggleDescription()">
+        <img class="picture" src="Photos/Talbarahi Temple.jpg" alt="Talbarahi temple">
+        <div class="description">
+          <p>Tal Barahi Temple, located on an island,
+             Accessible by boat, the temple provides stunning views of the Annapurna Range and the surrounding mountains. The goddess Barahi is worshipped for her protective and nurturing qualities, making Tal Barahi Temple a cultural and spiritual landmark in the enchanting city of Pokhara.</p>
+        </div>
+      </div>
+      <div class="picture-box" onclick="toggleDescription()">
+        <img class="picture" src="Photos/Pumdikot-Pokhara.jpg" alt="Pumdikot">
+        <div class="description">
+          <p>Tal Barahi Temple, located on an island,
+             Accessible by boat, the temple provides stunning views of the Annapurna Range and the surrounding mountains. The goddess Barahi is worshipped for her protective and nurturing qualities, making Tal Barahi Temple a cultural and spiritual landmark in the enchanting city of Pokhara.</p>
+        </div>
+      </div>
    <ol>
     <li>Tal barahi temple</li>
     <li>Pumdikot</li>
@@ -25,6 +82,13 @@
     <li>Matepani Gumba</li>
     <li>Jhang Choeling Tibetean Monastery</li>
    </ol>
+
+   <script>
+    function toggleDescription() {
+      var description = document.querySelector('.description');
+      description.style.opacity = (description.style.opacity === '0') ? '1' : '0';
+    }
+  </script>
     
 </body>
 </html>
